@@ -1,0 +1,27 @@
+<html ng-app="filterServiceApp">
+<head>
+	<script src="angular.js"></script>
+ 	<script src="filterController.js"></script>
+</head>
+<body>
+First Name:<input type="text" ng-model="fname">
+<br>
+Last Name:<input type="text" ng-model="lname">
+<br>
+Full Name: {{(fname|uppercase)+(lname|uppercase)}}
+<br>
+Number: {{23|ordinal}}
+<br>
+<input type="number" ng-model="value"><br>
+<input type="number" ng-model="value1"><br>
+<p>Total={{value1 * value | currency}}</p><br>
+<div ng-controller="filController">
+<ul>
+<li ng-repeat="n in names | orderBy:'age'">
+{{(n.name) + (n.age)}}
+</li>
+<ul>
+</div>
+
+</body>
+</html>
